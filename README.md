@@ -2,7 +2,7 @@
 
 The PasswordInput component is a reusable and secure UI component designed for user PasswordInput in web applications. It enhances security by including strength indication. The strength requirements **default** to the same as **ASP.NET Core Identity** and can be easily customized via props.
 
-![alt text](./password-input.png "PasswordInput Component")
+![alt text](password-input.png "PasswordInput Component")
 
 ## Features
 
