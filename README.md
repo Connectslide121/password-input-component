@@ -1,8 +1,8 @@
-# PasswordInput Component With Tooltip
+# Password Input Component with tooltip
 
-The PasswordInput component is a reusable and secure UI component designed for user PasswordInput in web applications. It enhances security by including strength indication. The strength requirements **default** to the same as **ASP.NET Core Identity** and can be easily customized via props.
+The Password Input Component is a reusable and secure UI component designed for user password input in web applications. It enhances security by including strength indication. The strength requirements **default** to the same as **ASP.NET Core Identity** and can be easily customized via props.
 
-![alt text](password-input.png "PasswordInput Component")
+![alt text](password-input.png "Password Input Component")
 
 ## Features
 
@@ -12,7 +12,7 @@ The PasswordInput component is a reusable and secure UI component designed for u
 
 ## Installation
 
-To install the PasswordInput component, you can use npm:
+To install the Password Input Component, you can use npm:
 
 ```bash
 npm i password-input-component
@@ -20,7 +20,7 @@ npm i password-input-component
 
 ## Usage
 
-After installation, you can import the PasswordInput component into your project:
+After installation, you can import the Password Input Component into your project:
 
 ```bash
 import PasswordInput from "password-input-component";
@@ -45,7 +45,7 @@ export default App;
 
 ## Props
 
-The following props can be passed to the PasswordInput component to customize its behavior:
+The following props can be passed to the Password Input Component to customize its behavior:
 
 - **`inputName`**: The `name` property of the input element. **Default: "password"**.
 
@@ -100,7 +100,7 @@ or
 
 ```js
 import { useState } from "react";
-import PasswordInput from "password-input";
+import PasswordInput from "password-input-component";
 
 function App() {
   const [password, setPassword] = useState("");
@@ -121,7 +121,7 @@ export default App;
 
 ## Styling
 
-The PasswordInput component can be styled using CSS. Here are the classes you can target:
+The Password Input Component can be styled using CSS. Here are the classes you can target:
 
 - **.password-input**: The class for the input field.
 - **.password-tooltip**: The class for the tooltip. Must use `!important` to override the following default styles:
@@ -202,4 +202,4 @@ git push origin feature/AmazingFeature
 
 For support, please open an issue in the GitHub issue tracker for this project.
 
-## Thank you for using the PasswordInput component!
+## Thank you for using the Password Input Component!
