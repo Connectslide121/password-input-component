@@ -2,7 +2,7 @@
 
 The Password Input Component is a reusable and secure UI component designed for user password input in web applications. It enhances security by including strength indication. The strength requirements **default** to the same as **ASP.NET Core Identity** and can be easily customized via props.
 
-![Password Input Component](https://github.com/Connectslide121/password-input-component/blob/master/password-input.png)
+![Password Input Component](https://github.com/Connectslide121/password-input-component/blob/master/images/password-input.png)
 
 ## Features
 
@@ -150,7 +150,7 @@ The Password Input Component can be styled using CSS. Here are the classes you c
 }
 ```
 
-![Arrow example](https://github.com/Connectslide121/password-input-component/blob/master/arrow.png)
+![Arrow example](https://github.com/Connectslide121/password-input-component/blob/master/images/arrow.png)
 
 - This code snippet will **center** the tooltip vertically with the input element
 
@@ -170,7 +170,7 @@ The Password Input Component can be styled using CSS. Here are the classes you c
 }
 ```
 
-![Centered tooltip example](https://github.com/Connectslide121/password-input-component/blob/master/centered.png)
+![Centered tooltip example](https://github.com/Connectslide121/password-input-component/blob/master/images/centered.png)
 
 ## Contributing
 
