@@ -1,3 +1,4 @@
 /src
+/images
 .babelrc
 webpack.config.js
