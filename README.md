@@ -68,7 +68,7 @@ The following props can be passed to the Password Input Component to customize i
 
 - **`minLength`**: Number that determines the minimum length of the password. **Default: 6**.
 
-- **`nonAlphaNumeric`**: Boolean that determines whether the password must contain at least one non-alphanumeric character. **Default: true**.
+- **`specialCharacter`**: Boolean that determines whether the password must contain at least one special character. **Default: true**.
 
 - **`lowercase`**: Boolean that determines whether the password must contain at least one lowercase character. **Default: true**.
 
@@ -81,7 +81,7 @@ The following props can be passed to the Password Input Component to customize i
 ```js
 <PasswordInput
   minLength={12}
-  nonAlphaNumeric={false}
+  specialCharacter={false}
   lowercase={false}
   uppercase={false}
   digit={false}

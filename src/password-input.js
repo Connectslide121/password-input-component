@@ -13,18 +13,17 @@ export default function PasswordInput(props) {
 
   // State variables for the password requirements, controlled via props
   const [minLength, setMinLength] = useState(6);
-  const [nonAlphaNumeric, setNonAlphaNumeric] = useState(true);
+  const [specialCharacter, setSpecialCharacter] = useState(true);
   const [lowercase, setLowercase] = useState(true);
   const [uppercase, setUppercase] = useState(true);
   const [digit, setDigit] = useState(true);
 
-  // State variables for each password requirement state, controlled by the component
+  // State variables for each password requirement current state, controlled by the component
   const [passwordTooShort, setPasswordTooShort] = useState(false);
-  const [passwordRequiresNonAlphanumeric, setPasswordRequiresNonAlphanumeric] =
-    useState(false);
-  const [passwordRequiresLower, setPasswordRequiresLower] = useState(false);
-  const [passwordRequiresUpper, setPasswordRequiresUpper] = useState(false);
-  const [passwordRequiresDigit, setPasswordRequiresDigit] = useState(false);
+  const [passwordHasSpecial, setPasswordHasSpecial] = useState(false);
+  const [passwordHasLower, setPasswordHasLower] = useState(false);
+  const [passwordHasUpper, setPasswordHasUpper] = useState(false);
+  const [passwordHasDigit, setPasswordHasDigit] = useState(false);
 
   const handleChange = (e) => {
     setPassword(e.target.value);
@@ -62,10 +61,10 @@ export default function PasswordInput(props) {
   }, [props.minLength]);
 
   useEffect(() => {
-    if (props.nonAlphaNumeric !== undefined) {
-      setNonAlphaNumeric(props.nonAlphaNumeric);
-    } else setNonAlphaNumeric(true);
-  }, [props.nonAlphaNumeric]);
+    if (props.specialCharacter !== undefined) {
+      setSpecialCharacter(props.specialCharacter);
+    } else setSpecialCharacter(true);
+  }, [props.specialCharacter]);
 
   useEffect(() => {
     if (props.lowercase !== undefined) {
@@ -92,24 +91,24 @@ export default function PasswordInput(props) {
       setPasswordTooShort(false);
     }
     if (password.match(/[a-z]/)) {
-      setPasswordRequiresLower(true);
+      setPasswordHasLower(true);
     } else {
-      setPasswordRequiresLower(false);
+      setPasswordHasLower(false);
     }
     if (password.match(/[A-Z]/)) {
-      setPasswordRequiresUpper(true);
+      setPasswordHasUpper(true);
     } else {
-      setPasswordRequiresUpper(false);
+      setPasswordHasUpper(false);
     }
     if (password.match(/[0-9]/)) {
-      setPasswordRequiresDigit(true);
+      setPasswordHasDigit(true);
     } else {
-      setPasswordRequiresDigit(false);
+      setPasswordHasDigit(false);
     }
     if (password.match(/[^a-zA-Z0-9]/)) {
-      setPasswordRequiresNonAlphanumeric(true);
+      setPasswordHasSpecial(true);
     } else {
-      setPasswordRequiresNonAlphanumeric(false);
+      setPasswordHasSpecial(false);
     }
   }, [password, minLength]);
 
@@ -145,30 +144,28 @@ export default function PasswordInput(props) {
             <span>{passwordTooShort ? "\u{2705}" : "\u{274C}"}</span> at least{" "}
             {minLength} characters
           </p>
-          {nonAlphaNumeric && (
+          {specialCharacter && (
             <p>
-              <span>
-                {passwordRequiresNonAlphanumeric ? "\u{2705}" : "\u{274C}"}
-              </span>{" "}
-              at least one non alphanumeric character
+              <span>{passwordHasSpecial ? "\u{2705}" : "\u{274C}"}</span> at
+              least one special character (&*_+:"...)
             </p>
           )}
           {lowercase && (
             <p>
-              <span>{passwordRequiresLower ? "\u{2705}" : "\u{274C}"}</span> at
-              least one lowercase ('a'-'z')
+              <span>{passwordHasLower ? "\u{2705}" : "\u{274C}"}</span> at least
+              one lowercase ('a'-'z')
             </p>
           )}
           {uppercase && (
             <p>
-              <span>{passwordRequiresUpper ? "\u{2705}" : "\u{274C}"}</span> at
-              least one uppercase ('A'-'Z')
+              <span>{passwordHasUpper ? "\u{2705}" : "\u{274C}"}</span> at least
+              one uppercase ('A'-'Z')
             </p>
           )}
           {digit && (
             <p>
-              <span>{passwordRequiresDigit ? "\u{2705}" : "\u{274C}"}</span> at
-              least one digit ('0'-'9')
+              <span>{passwordHasDigit ? "\u{2705}" : "\u{274C}"}</span> at least
+              one digit ('0'-'9')
             </p>
           )}
         </div>
