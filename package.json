@@ -1,6 +1,6 @@
 {
   "name": "password-input-component",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "a password input component with a tooltip that displays password requirements and if they are met or not",
   "main": ".build/password-input.js",
   "scripts": {
